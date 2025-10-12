@@ -10,7 +10,7 @@ Qtで作成し、ffmpegとimagemagickをコマンドで動かしています。
 # 実行方法
 これはまだ完成前段階なのでソースからビルドしてもらう必要があります。
 ```
-git clone https://github.com/Akasakax/Easy_Converter.git　<br>
+git clone https://github.com/Akasakax/Easy_Converter.git
 cd Easy_Converter
 qmake6
 make
