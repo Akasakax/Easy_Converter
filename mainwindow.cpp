@@ -47,7 +47,6 @@ void MainWindow::on_pushButton_10_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    ui->label_10->setText("変換中…");
     QString text = ui->textEdit->toPlainText();
     QString command = "ffmpeg";
     QStringList arguments;
@@ -55,5 +54,17 @@ void MainWindow::on_pushButton_2_clicked()
     QProcess::execute(command, arguments);
     ui->label_10->setText("変換終了＆ただいま準備中…");
 
+}
+
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    QString text = ui->textEdit_4->toPlainText();
+    QString command = "convert";
+    QStringList arguments;
+    arguments << file << dir + "/" + text;
+    qDebug() << "file path:" << arguments;
+    QProcess::execute(command, arguments);
+    ui->label_11->setText("変換終了＆ただいま準備中…");
 }
 

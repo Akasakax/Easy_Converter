@@ -35,7 +35,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="tabBarAutoHide">
        <bool>false</bool>
@@ -278,6 +278,12 @@
             <width>16777215</width>
             <height>40</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <bold>false</bold>
+           </font>
           </property>
          </widget>
         </item>
