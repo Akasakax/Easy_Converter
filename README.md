@@ -1,0 +1,2 @@
+# Easy_Converter
+ffmpegらを用いてファイルを最低限の変換するのをGUIで簡単に操作するアプリです。
