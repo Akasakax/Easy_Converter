@@ -9,13 +9,13 @@ Qtで作成し、ffmpegとimagemagickをコマンドで動かしています。
 
 # 実行方法
 これはまだ完成前段階なのでソースからビルドしてもらう必要があります。
-
-git clone https://github.com/Akasakax/Easy_Converter.git
+```
+git clone https://github.com/Akasakax/Easy_Converter.git　<br>
 cd Easy_Converter
 qmake6
 make
 ./Easy_Converter
-
+```
 # 使い方
 タブ内を上から順に進めてください。
 「変換後のファイル名を入力してください」の項目は自分が指定したいファイルの形式を記述してください。
