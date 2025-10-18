@@ -4,6 +4,7 @@
 
     QString file;
     QString dir;
+    QString encodetype = "";
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -61,8 +62,15 @@ void MainWindow::on_pushButton_2_clicked()
     QString text = ui->textEdit->toPlainText();
     QString command = "ffmpeg";
     QStringList arguments;
-    arguments << "-i" << file << dir + "/" + text;
-
+    if (encodetype == "AMD"){
+        arguments << "-vaapi_device" << "/dev/dri/renderD128" << "-i" << file
+                  << "-vf" << "format=nv12,hwupload"
+                  << "-c:v" << "h264_vaapi" << dir + "/" + text;
+    }else if (encodetype == "CPU"){
+        arguments << "-i"  << file << dir + "/" + text;
+    }else{
+        arguments << "-i"  << file << dir + "/" + text;
+    }
     // 「変換中」と表示
     ui->label_10->setText("変換中");
     ui->label_10->setStyleSheet("background-color: orange;");
@@ -137,5 +145,24 @@ void MainWindow::on_action_triggered()
 void MainWindow::on_actionexit_triggered()
 {
     this -> close();
+}
+
+void MainWindow::on_checkBox_toggled(bool checked)
+{
+    if (checked) {
+        encodetype = "AMD";
+    } else {
+        encodetype = "";
+    }
+}
+
+
+void MainWindow::on_checkBox_2_toggled(bool checked)
+{
+    if (checked) {
+        encodetype = "CPU";
+    } else {
+        encodetype = "";
+    }
 }
 

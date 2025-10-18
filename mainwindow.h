@@ -36,6 +36,10 @@ private slots:
 
     void on_actionexit_triggered();
 
+    void on_checkBox_toggled(bool checked);
+
+    void on_checkBox_2_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
 };
