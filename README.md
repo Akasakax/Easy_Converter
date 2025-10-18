@@ -11,9 +11,13 @@ Qtで作成し、ffmpegとimagemagickをコマンドで動かしています。
 ## 実行方法
 [ここ](https://github.com/Akasakax/Easy_Converter/releases)から最新のdebをダウンロードしてください。
 その後にダウンロードされたディレクトリ内で以下コマンドを実行してください。
+```
 sudo dpkg -i Easy_Converter[VERSION NUMBER].deb
+```
 アンインストールする際には以下コマンドです。
+```
 sudo dpkg -r Easy_Converter
+```
 
 ## 使い方
 タブ内を上から順に進めてください。
