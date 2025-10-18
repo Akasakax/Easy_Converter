@@ -1,7 +1,8 @@
 # Easy_Converter
 ffmpegとImageMagickを用いてファイルを最低限の変換するのをQtベースのGUIで簡単に操作するアプリです。
 
-<img width="968" height="779" alt="Screenshot_20251012_185821" src="https://github.com/user-attachments/assets/21d2089e-2e90-4cf1-98a6-25b253a68592" />
+<img width="968" height="779" alt="Screenshot_20251019_014048" src="https://github.com/user-attachments/assets/f25bdfc4-54f2-4db2-8c55-6ee2d5919bbc" />
+
 
 ## 依存関係
 Qtで作成し、ffmpegとimagemagickをコマンドで動かしています。
