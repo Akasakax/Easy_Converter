@@ -9,14 +9,12 @@ Qtで作成し、ffmpegとimagemagickをコマンドで動かしています。
 環境にない場合はインストールしてください。
 
 ## 実行方法
-これはまだ完成前段階なのでソースからビルドしてもらう必要があります。
-```
-git clone https://github.com/Akasakax/Easy_Converter.git
-cd Easy_Converter
-qmake6
-make
-./Easy_Converter
-```
+[ここ](https://github.com/Akasakax/Easy_Converter/releases)から最新のdebをダウンロードしてください。
+その後にダウンロードされたディレクトリ内で以下コマンドを実行してください。
+sudo dpkg -i Easy_Converter[VERSION NUMBER].deb
+アンインストールする際には以下コマンドです。
+sudo dpkg -r Easy_Converter
+
 ## 使い方
 タブ内を上から順に進めてください。
 「変換後のファイル名を入力してください」の項目は自分が指定したいファイルの形式を含めて記述してください。
