@@ -3,11 +3,6 @@ ffmpegとImageMagickを用いてファイルを最低限の変換するのをQt�
 
 <img width="968" height="779" alt="Screenshot_20251019_063718" src="https://github.com/user-attachments/assets/4948693e-126b-4c04-a8c2-f76326966003" />
 
-
-## 依存関係
-Qtで作成し、ffmpegとimagemagickをコマンドで動かしています。
-環境にない場合はインストールしてください。
-
 ## 実行方法
 [ここ](https://github.com/Akasakax/Easy_Converter/releases)から最新のdebをダウンロードしてください。
 その後にダウンロードされたディレクトリ内で以下コマンドを実行してください。
