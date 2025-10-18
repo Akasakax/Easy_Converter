@@ -48,20 +48,11 @@ void MainWindow::on_pushButton_10_clicked()
 
 //動画/音声を出力する
 void MainWindow::on_pushButton_2_clicked()
-{/*
-    //ファイル名を読み込む
+{
     QString text = ui->textEdit->toPlainText();
     QString command = "ffmpeg";
     QStringList arguments;
-    //コマンドを作成
-    arguments << "-i" << file << dir + "/" + text;
-    QProcess::execute(command, arguments);
-    ui->label_10->setText("変換終了");
-    ui->label_10->setStyleSheet("background-color: #993333;");
-*/
-    QString text = ui->textEdit->toPlainText();
-    QString command = "ffmpeg";
-    QStringList arguments;
+    //エンコード方式を選択
     if (encodetype == "AMD"){
         arguments << "-vaapi_device" << "/dev/dri/renderD128" << "-i" << file
                   << "-vf" << "format=nv12,hwupload"
@@ -103,13 +94,6 @@ void MainWindow::on_pushButton_11_clicked()
     QStringList arguments;
     arguments << file << dir + "/" + text;
 
-    /*
-    //コマンドを作成
-    arguments << file << dir + "/" + text;
-    QProcess::execute(command, arguments);
-    ui->label_11->setText("変換終了");
-    ui->label_11->setStyleSheet("background-color: #993333;"); */
-
     // 「変換中」と表示
     ui->label_10->setText("変換中");
     ui->label_10->setStyleSheet("background-color: orange;");
@@ -133,7 +117,7 @@ void MainWindow::on_pushButton_11_clicked()
     });
 }
 
-
+//ファイルを選択
 void MainWindow::on_action_triggered()
 {
     file = QFileDialog::getOpenFileName();
@@ -141,12 +125,13 @@ void MainWindow::on_action_triggered()
     ui->label_6->setText(file);
 }
 
-
+//終了
 void MainWindow::on_actionexit_triggered()
 {
     this -> close();
 }
 
+//エンコードタイプAMD
 void MainWindow::on_checkBox_toggled(bool checked)
 {
     if (checked) {
@@ -156,7 +141,7 @@ void MainWindow::on_checkBox_toggled(bool checked)
     }
 }
 
-
+//エンコードタイプCPU
 void MainWindow::on_checkBox_2_toggled(bool checked)
 {
     if (checked) {
