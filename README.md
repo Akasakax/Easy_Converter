@@ -11,7 +11,7 @@ sudo dpkg -i Easy_Converter[VERSION NUMBER].deb
 ```
 アンインストールする際には以下コマンドです。
 ```
-sudo dpkg -r easy_converter
+sudo dpkg -r easy-converter
 ```
 
 ## 使い方
