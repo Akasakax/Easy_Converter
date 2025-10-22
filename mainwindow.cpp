@@ -54,13 +54,16 @@ void MainWindow::on_pushButton_2_clicked()
     QStringList arguments;
     //エンコード方式を選択
     if (encodetype == "AMD"){
-        arguments << "-vaapi_device" << "/dev/dri/renderD128" << "-i" << file
+        arguments << "-threads" << "0" << "-vaapi_device" << "/dev/dri/renderD128" << "-i" << file
                   << "-vf" << "format=nv12,hwupload"
-                  << "-c:v" << "h264_vaapi" << dir + "/" + text;
+                  << "-c:v" << "hevc_vaapi" << dir + "/" + text;
+        qDebug() << encodetype;
     }else if (encodetype == "CPU"){
-        arguments << "-i"  << file << dir + "/" + text;
+        arguments << "-threads" << "0" << "-i" << file << dir + "/" + text;
+        qDebug() << encodetype;
     }else{
-        arguments << "-i"  << file << dir + "/" + text;
+        arguments << "-threads" << "0" << "-i"  << file << dir + "/" + text;
+        qDebug() << encodetype;
     }
     // 「変換中」と表示
     ui->label_10->setText("変換中");
@@ -135,9 +138,10 @@ void MainWindow::on_actionexit_triggered()
 void MainWindow::on_checkBox_toggled(bool checked)
 {
     if (checked) {
-        encodetype = "AMD";
-    } else {
-        encodetype = "";
+            encodetype = "";
+            ui -> checkBox_2 -> setChecked(false);
+            encodetype = "AMD";
+            qDebug() << "type:" << encodetype;
     }
 }
 
@@ -145,9 +149,10 @@ void MainWindow::on_checkBox_toggled(bool checked)
 void MainWindow::on_checkBox_2_toggled(bool checked)
 {
     if (checked) {
-        encodetype = "CPU";
-    } else {
         encodetype = "";
+        ui -> checkBox -> setChecked(false);
+        encodetype = "CPU";
+        qDebug() << "type:" << encodetype;
     }
 }
 
