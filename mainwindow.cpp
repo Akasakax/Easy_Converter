@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QSettings>
 
+
     QString file;
     QString dir;
     QString encodetype = "";
@@ -138,10 +139,23 @@ void MainWindow::on_actionexit_triggered()
 void MainWindow::on_checkBox_toggled(bool checked)
 {
     if (checked) {
+        // QProcessを生成
+        QProcess *process = new QProcess();
+        QString command = "lspci";
+        // コマンド実行（非同期）
+        process->start(command);
+        process->waitForFinished();
+        QString output = process -> readAllStandardOutput();
+        if(output.contains("AMD")){
             encodetype = "";
             ui -> checkBox_2 -> setChecked(false);
             encodetype = "AMD";
             qDebug() << "type:" << encodetype;
+            }else{
+            QMessageBox::critical(this, tr("GPUの確認"), tr("AMDのGPUが確認できません。"));
+            encodetype = "";
+            ui -> checkBox -> setChecked(false);
+        }
     }
 }
 
