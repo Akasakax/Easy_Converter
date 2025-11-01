@@ -78,7 +78,7 @@ void MainWindow::on_pushButton_2_clicked()
 
     // 終了時の処理
     //終了したときの返される値から判断
-    connect(process, &QProcess::finished, [=](int exitCode) {
+    connect(process,static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),this,[=](int exitCode, QProcess::ExitStatus) {
         if (exitCode == 0) {
             ui->label_10->setText("変換完了");
             ui->label_10->setStyleSheet("background-color: #339966;");
