@@ -6,6 +6,7 @@
 #include <QProcess>
 #include <QDebug>
 #include <QMessageBox>
+#include <QDirIterator>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
