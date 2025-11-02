@@ -108,9 +108,13 @@ void MainWindow::on_pushButton_11_clicked()
     ui->label_10->setText("変換中");
     ui->label_10->setStyleSheet("background-color: orange;");
 
+    //エラーを確認する
+    if(text==""){
+        QMessageBox::critical(this, tr("エラー"), tr("ファイル名を記入してください。"));
+    }
+
     // QProcessを生成
     QProcess *process = new QProcess();
-
     // コマンド実行（非同期）
     process->start(command, arguments);
 
